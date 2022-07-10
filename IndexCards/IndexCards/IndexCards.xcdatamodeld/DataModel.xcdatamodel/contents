@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="IndexCard" representedClassName="IndexCard" syncable="YES" codeGenerationType="class">
+        <attribute name="backtext" optional="YES" attributeType="String"/>
+        <attribute name="fronttext" optional="YES" attributeType="String"/>
+        <relationship name="set" maxCount="1" deletionRule="Nullify" destinationEntity="IndexCardSet" inverseName="cards" inverseEntity="IndexCardSet"/>
+    </entity>
+    <entity name="IndexCardSet" representedClassName="IndexCardSet" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="IndexCard" inverseName="set" inverseEntity="IndexCard"/>
+    </entity>
+    <elements>
+        <element name="IndexCard" positionX="-54" positionY="18" width="128" height="74"/>
+        <element name="IndexCardSet" positionX="-63" positionY="-18" width="128" height="74"/>
+    </elements>
+</model>
